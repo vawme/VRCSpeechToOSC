@@ -1,4 +1,4 @@
-name: Release Build
+﻿name: Release Build
 
 on:
   push:
@@ -46,9 +46,16 @@ jobs:
           name: VRCSpeechToOSC
           path: publish/
 
+      - name: Rename publish folder
+        run: Rename-Item publish VRCSpeechToOSC
+
+      - name: Archive VRCSpeechToOSC folder to zip
+        run: |
+          Compress-Archive -Path VRCSpeechToOSC -DestinationPath VRCSpeechToOSC.zip
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: publish/**
+          files: VRCSpeechToOSC.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
