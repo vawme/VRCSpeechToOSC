@@ -1,0 +1,23 @@
+﻿# VRChatのOSC受信ホスト・ポート（通常は変えない）
+TargetHost: 127.0.0.1
+TargetPort: 9000
+
+CommandGroups: # コマンドグループ: グループごとに異なるプレフィックスを定義できる。呼び出す機能やアバターごとに別のプレフィックスを定義しておくといいかもしれない。
+  - Prefix: "コマンド" # プレフィックス: コマンドの先頭に必ずつける言葉（例えば、このサンプル設定をそのまま使う場合、撮影するときは「コマンド 撮影」と発音する）
+    Commands:
+      - Prompts: ["カメラモード"] # プロンプト: プレフィックスの後に発音する内容(複数指定可。いずれかが一致すると発動)
+        OscPath: "/usercamera/Mode" # プレフィックス+プロンプト が合致した場合に送るOSCのパス
+        Value: 1 # 送る値（ない場合は書かない）
+        Type: "int" # 送る値の型 bool/int/float/string のいずれかを指定する（Valueの中身と一致していないとエラーで落ちる）（Valueがない場合は書かない）
+      - Prompts: ["ストリームカメラ"]
+        OscPath: "/usercamera/Mode"
+        Value: 2
+        Type: "int"
+      - Prompts: ["撮影"]
+        OscPath: "/usercamera/Capture"
+      - Prompts: ["タイマー"]
+        OscPath: "/usercamera/CaptureDelayed"
+      - Prompts: ["フライングカメラ", "フラインカメラ", "フライカメラ"]
+        OscPath: "/usercamera/Flying"
+        Value: true
+        Type: "bool"
