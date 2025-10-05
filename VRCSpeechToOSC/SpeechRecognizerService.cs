@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Speech.Recognition;
 using Buildetech.OscCore;
@@ -91,7 +91,7 @@ namespace VRCSpeechToOSC
                         oscClient.Send(cmd.OscPath, cmd.Value?.ToString() ?? string.Empty);
                         break;
                     default:
-                        // Œ^‚ª•s³‚È‚Í‘—M‚µ‚È‚¢
+                        // å‹ãŒä¸æ­£ãªæ™‚ã¯é€ä¿¡ã—ãªã„
                         return;
                 }
             }

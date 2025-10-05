@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 
 namespace VRCSpeechToOSC
 {
@@ -18,8 +18,8 @@ namespace VRCSpeechToOSC
     public class CommandDefinition
     {
         public List<string> Prompts { get; set; } = new();
-        public string OscPath { get; set; }@= string.Empty;
-        public object? Value { get; set; } // null‹–—e: ’l‚È‚µ‚Ìê‡‚ª‚ ‚é
-        public string? Type { get; set; }  // null‹–—e: ’l‚È‚µ‚Ìê‡‚ª‚ ‚é
+        public string OscPath { get; set; }ã€€= string.Empty;
+        public object? Value { get; set; } // nullè¨±å®¹: å€¤ãªã—ã®å ´åˆãŒã‚ã‚‹
+        public string? Type { get; set; }  // nullè¨±å®¹: å€¤ãªã—ã®å ´åˆãŒã‚ã‚‹
     }
 }
